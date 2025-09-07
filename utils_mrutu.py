@@ -1,5 +1,5 @@
 """
-File: utils_case.py
+File: utils_mrutu.py
 
 Purpose: Reusable header/tagline module for analytics projects.
 
@@ -10,11 +10,10 @@ A short, first-week module to demonstrate key skills:
 - expose a function named get_tagline() that can be imported into other modules
 - run this file as a script via main() using the if __name__ == '__main__' pattern
 
-Author: Denise Case
+Author: Agnes Mrutu
 
-TODO: Replace 'lastname' in the filename with your own last (or unique) name.
-TODO: Update the file name and author in this opening docstring.
-TODO: Remove each TODO line AFTER you successfully complete the item.
+
+
 """
 
 #####################################
@@ -58,25 +57,25 @@ logger.info("Logger loaded.")
 # ----------------------------------
 is_accepting_clients: bool = True
 offers_remote_workshops: bool = True
+is_hiring: bool = False  # Example of a new boolean variable
 
-# TODO: Declare and initialize a new boolean variable (e.g. `is_hiring` and set it to False)
 
 # ----------------------------------
 # Define Integer variables
 # ----------------------------------
 current_year: int = 2025
 year_started: int = 2020
+number_of_employees: int = 25
 
-# TODO: Declare and initialize a new integer variable (e.g. `number_of_employees` and set it to 25)
 
 # ----------------------------------
 # Define String variables
 # ----------------------------------
-author: str = "Denise Case"  # TODO: change to your name
-organization: str = "Stellar Analytics"  # TODO: change the org name
-motto: str = "Clear. Useful. On time."  # TODO: change the motto
+author: str = "Agnes Mrutu" 
+organization: str = "Kilimanjaro Analytics" 
+motto: str = "Hapa Kazi Tu."  
+location: str = "Hai, Kilimanjaro-Tanzania"  
 
-# TODO: Declare and initialize a new string variable (e.g. `location` and set it to your city and state)
 
 # ----------------------------------
 # Define List variables
@@ -86,22 +85,22 @@ services: list[str] = ["Data Analysis", "Machine Learning", "Business Intelligen
 
 # example list of floating point numbers
 satisfaction_scores: list[float] = [4.8, 4.6, 4.9, 5.0, 4.7]
+Office_locations: list[str] = ["Dododma", "Same", "Karatu", "Tukuyu", "Mwakaleli"]
 
 
-# TODO: Declare and initialize a new list variable (e.g. `office_locations` and set it to 3-5 cities where your org has offices)
-# TODO: Wrap each string in quotes and separate each item with a comma.
+
 
 # ----------------------------------
 # Use built-in Python operators (such as - + * /)
 # and built-in Python functions (such as min, max, len, upper, lower, etc.)
 # ----------------------------------
-years_active: int = current_year - year_started
+years_active: int = 2025 - 2020
 min_score: float = min(satisfaction_scores)
 max_score: float = max(satisfaction_scores)
 count_of_services: int = len(services)
 count_of_scores: int = len(satisfaction_scores)
 
-# TODO: Declare and initialize a new calculated variable (e.g. `count_of_locations` that uses the len() function on your list of office locations)
+
 
 
 # ----------------------------------
@@ -120,8 +119,11 @@ byline: str = f"""
 Author:                     {author}
 Motto:                      {motto}
 Years Active:               {years_active}
+Number of Employees:      {number_of_employees}
 Accepting New Clients?:     {is_accepting_clients}
+Hiring?:                    {is_hiring}
 Remote Workshops?:          {offers_remote_workshops}
+office Locations:         {Office_locations}
 Services:                   {services}
 Client Satisfaction Scores: {satisfaction_scores}
 Minimum Satisfaction Score: {min_score}
@@ -131,7 +133,7 @@ Mean Satisfaction Score:    {mean_score:.2f}
 **********************************************************
 """
 
-# TODO: Modify the byline f-string to display your new variables as well. Use curly braces {} to embed each variable.
+
 
 #####################################
 # Define Global Functions
@@ -170,7 +172,7 @@ def main() -> None:
     loguru.logger.info("Byline:\n" + get_byline())
 
     try:
-        # TODO: Uncomment next line if you want audio feedback (use CTRL+C to stop)
+       
         # read_byline_aloud()
         pass
     except KeyboardInterrupt:
@@ -193,22 +195,3 @@ def main() -> None:
 if __name__ == "__main__":
     main()
 
-
-""" 
-    More about functions:
-
-    - A function is a block of code that performs a task.
-    - We wrote a reusable function that returns our byline.
-    - Functions let us write code once and reuse it.
-    - Defining good functions is a valuable skill.
-    - Know what you want to name it, what information it needs to do its job,
-      and what it should return (if anything).
-    - Our byline function doesn't need any additional information passed in,
-        so there's nothing inside the parentheses.
-    - AI tools can help us write functions, but WE must specify what we want.
-    - Recommended: 
-        - Use `type hints` to indicate what kind of value (if any) the function returns.
-        - Use `type hints` to indicate what type of information each parameter should be.
-        - Use a docstring at the start to describe what the function does.
-    - Everything after the colon must be indented consistently (usually 4 spaces)
-"""
